@@ -1,0 +1,191 @@
+/* =========================================================================
+   💖 LOVERS SURPRISE - KEYFRAME ANIMATIONS 💖
+   ========================================================================= */
+
+@keyframes heartbeatPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.4)); }
+  14% { transform: scale(1.18); filter: drop-shadow(0 0 24px rgba(244, 63, 94, 0.9)); }
+  28% { transform: scale(1.05); filter: drop-shadow(0 0 14px rgba(244, 63, 94, 0.5)); }
+  42% { transform: scale(1.24); filter: drop-shadow(0 0 30px rgba(244, 63, 94, 1)); }
+  70% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.4)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.4)); }
+}
+
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounceBar {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake-error {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+@keyframes shake-jar {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg) scale(1.05); }
+  50% { transform: rotate(8deg) scale(1.05); }
+  75% { transform: rotate(-4deg) scale(1.03); }
+}
+
+@keyframes unlock-glow {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(244, 63, 94, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(244, 63, 94, 0.9), 0 0 100px rgba(251, 191, 36, 0.6); }
+  100% { transform: scale(1); }
+}
+
+@keyframes unfoldNote {
+  0% { opacity: 0; transform: scale(0.3) rotate(-20deg); }
+  60% { transform: scale(1.05) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-1deg); }
+}
+
+@keyframes unfoldLetter {
+  0% { opacity: 0; transform: translateY(-40px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes crackSeal {
+  0% { transform: translateX(-50%) scale(1); }
+  40% { transform: translateX(-50%) scale(1.2); filter: brightness(1.4); }
+  100% { transform: translateX(-50%) scale(0); opacity: 0; }
+}
+
+@keyframes floatLantern {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(25px) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-115vh) translateX(-20px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Confetti Falling */
+.confetti-piece {
+  position: fixed;
+  top: -10px;
+  width: 9px;
+  height: 14px;
+  border-radius: 3px;
+  z-index: 1200;
+  pointer-events: none;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Aesthetic Frame Reveal */
+@keyframes frameZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.65) translateY(40px) rotate(-3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-6px) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes shimmerGold {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Flower Bloom Animations */
+@keyframes flowerFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+@keyframes bloomGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.4)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 25px rgba(244, 63, 94, 0.8)); transform: scale(1.08); }
+}
+
+/* Moving Photos Infinite Marquee */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* 3D Ring Box & Diamond Reveal */
+@keyframes openBoxLid {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-120deg) translateY(-20px); }
+}
+
+@keyframes diamondRise {
+  0% { transform: translateY(30px) scale(0.3); opacity: 0; }
+  60% { transform: translateY(-15px) scale(1.15); opacity: 1; filter: drop-shadow(0 0 35px #38bdf8); }
+  100% { transform: translateY(0) scale(1); opacity: 1; filter: drop-shadow(0 0 20px #67e8f9); }
+}
+
+@keyframes ringSparkleRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); filter: drop-shadow(0 0 30px #f43f5e); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Boarding Pass Stamp Animation */
+@keyframes stampDrop {
+  0% {
+    opacity: 0;
+    transform: scale(3.5) rotate(-35deg);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(0.92) rotate(-14deg);
+  }
+  80% {
+    transform: scale(1.05) rotate(-11deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-12deg);
+  }
+}
+
+

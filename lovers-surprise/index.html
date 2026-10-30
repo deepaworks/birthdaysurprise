@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Our Universe of Love 💖✨</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- Favicon Heart -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+</head>
+<body>
+
+  <!-- Background Particle Canvas (Fireflies, Stardust & Drifting Rose Petals) -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Audio Start Prompt Overlay -->
+  <div id="audioStartPrompt" class="audio-prompt">
+    ✨ Tap anywhere to start our melody & story ✨
+  </div>
+
+  <!-- Top Floating Music Controller -->
+  <div class="audio-bar">
+    <button id="musicToggleBtn" class="music-toggle" onclick="window.soundEngine.toggleMusic()">
+      🎵 Music: Playing
+    </button>
+    <div id="musicVisualizer" class="visualizer-bars playing">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Lantern Sky Container (Finale) -->
+  <div id="lanternSky" class="lantern-sky"></div>
+
+  <!-- Toast Notification Message -->
+  <div id="appToast" class="app-toast"></div>
+
+  <!-- =========================================================================
+       ✨ AESTHETIC ORNATE PHOTO FRAME REVEAL MODAL (ON LOCK UNLOCK)
+       ========================================================================= -->
+  <div id="unlockFrameModal" class="unlock-frame-modal">
+    <div class="ornate-frame-wrapper">
+      <div class="ornate-frame">
+        <div class="frame-corner-decor decor-tl">⚜️</div>
+        <div class="frame-corner-decor decor-tr">⚜️</div>
+        <div class="frame-corner-decor decor-bl">⚜️</div>
+        <div class="frame-corner-decor decor-br">⚜️</div>
+
+        <div class="frame-photo-container">
+          <img id="unlockFrameImg" src="assets/images/sasi.jpeg" alt="Our Special Person">
+          <div class="frame-sheen"></div>
+        </div>
+
+        <div class="frame-details">
+          <span class="frame-tag">The Key To My Heart</span>
+          <h2 id="unlockFrameTitle" class="frame-title">The Keeper of My Heart 🫀✨</h2>
+          <p id="unlockFrameQuote" class="frame-quote">Ulagathula evlo azhagu irundhalum, un smile-kku munnadi ellam dust thaan di!</p>
+          <button id="unlockFrameBtn" class="action-btn" style="margin-top:10px;">
+            Step Into Our Magical Universe 💖
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="app-container">
+
+    <!-- =========================================================================
+         CHAPTER 1: HEARTBEAT ANNIVERSARY LOCK
+         ========================================================================= -->
+    <section id="chapter-1" class="chapter-section active">
+      <div class="chapter-header">
+        <span class="chapter-tag">Secret Vault</span>
+        <h1 class="chapter-title">The Key To My Heart</h1>
+        <p class="chapter-subtitle">Enter the secret date that changed our lives forever 🔒✨</p>
+      </div>
+
+      <div id="lockCard" class="lock-card">
+        <div id="heartbeatIcon" class="heartbeat-vault-icon">🫀</div>
+        <div class="lock-pin-display" id="pinDisplay">••••</div>
+
+        <div id="lockKeypad" class="lock-keypad">
+          <button class="key-btn" data-val="1">1</button>
+          <button class="key-btn" data-val="2">2</button>
+          <button class="key-btn" data-val="3">3</button>
+          <button class="key-btn" data-val="4">4</button>
+          <button class="key-btn" data-val="5">5</button>
+          <button class="key-btn" data-val="6">6</button>
+          <button class="key-btn" data-val="7">7</button>
+          <button class="key-btn" data-val="8">8</button>
+          <button class="key-btn" data-val="9">9</button>
+          <button class="key-btn action-key" data-val="hint">💡 Hint</button>
+          <button class="key-btn" data-val="0">0</button>
+          <button class="key-btn action-key" data-val="clear">✖ Clear</button>
+        </div>
+
+        <div id="hintPopup" class="hint-popup">
+          <span id="lockHintText"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CHAPTER 2: CONSTELLATION OF US (MILESTONES)
+         ========================================================================= -->
+    <section id="chapter-2" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter I</span>
+        <h1 class="chapter-title">The Constellation of Us</h1>
+        <p class="chapter-subtitle">Every memory with you is a star in my sky 🌌</p>
+      </div>
+
+      <div id="milestonesList" class="milestones-container">
+        <!-- Injected dynamically from LOVE_CONFIG -->
+      </div>
+
+      <button class="action-btn" onclick="App.goToChapter(3)">
+        Explore Our Journey 🧭✨
+      </button>
+    </section>
+
+    <!-- =========================================================================
+         CHAPTER 3: OUR JOURNEY (BOARDING PASS & ROADMAP TO FOREVER)
+         ========================================================================= -->
+    <section id="chapter-3" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter II</span>
+        <h1 class="chapter-title">Our Journey to Forever</h1>
+        <p class="chapter-subtitle">Every kilometer, memory, and heartbeat led me straight to you 🧭🗺️</p>
+      </div>
+
+      <div class="journey-container">
+        <!-- Luxury Boarding Pass Ticket -->
+        <div class="boarding-pass-ticket">
+          <div class="ticket-notch-top"></div>
+          <div class="ticket-notch-bottom"></div>
+
+          <div class="ticket-header">
+            <span class="ticket-airline">✈️ AIRLINES OF LOVE</span>
+            <span class="ticket-class">First Class Soulmates</span>
+          </div>
+
+          <div class="ticket-body">
+            <div class="ticket-route">
+              <div class="route-city">
+                <span class="route-code">MEET</span>
+                <span class="route-name" id="ticketFrom">Two Strangers in this World</span>
+              </div>
+              <div class="route-plane">✈️➔</div>
+              <div class="route-city" style="text-align:right;">
+                <span class="route-code">EVER</span>
+                <span class="route-name" id="ticketTo">Together For Eternity ♾️</span>
+              </div>
+            </div>
+
+            <div class="ticket-info-grid">
+              <div class="ticket-info-item">
+                <label>Passenger</label>
+                <span id="ticketPassengerName">Bujji & Love</span>
+              </div>
+              <div class="ticket-info-item">
+                <label>Flight</label>
+                <span id="ticketFlightNo">HEART-1402</span>
+              </div>
+              <div class="ticket-info-item">
+                <label>Seat</label>
+                <span id="ticketSeat">Side by Side (1A & 1B)</span>
+              </div>
+              <div class="ticket-info-item">
+                <label>Gate</label>
+                <span>Love Gate 01</span>
+              </div>
+              <div class="ticket-info-item">
+                <label>Boarding</label>
+                <span id="ticketDate">Forever & Always</span>
+              </div>
+              <div class="ticket-info-item">
+                <label>Status</label>
+                <span style="color:var(--gold-glow);">Confirmed 🫀</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-footer">
+            <button id="stampTicketBtn" class="action-btn" style="margin:0; padding:10px 22px; font-size:0.9rem;">
+              Stamp Our Boarding Pass 🛂
+            </button>
+            <span style="font-family:monospace; color:rgba(255,255,255,0.4); font-size:0.75rem;">||||||||||||||||||||||||</span>
+          </div>
+
+          <!-- Rubber Stamp Seal -->
+          <div id="passportStampSeal" class="passport-stamp-seal">
+            <span>PASSPORT</span>
+            <span>APPROVED</span>
+            <span>FOR ETERNITY</span>
+            <span>💍 ♾️</span>
+          </div>
+        </div>
+
+        <!-- Journey Roadmap Stations -->
+        <div class="roadmap-timeline" id="roadmapStations">
+          <!-- Injected dynamically from LOVE_CONFIG.ourJourney.stations -->
+        </div>
+
+        <!-- Travel & Life Bucket List Pledges -->
+        <div class="bucket-list-section">
+          <h3 class="bucket-list-title">Our Adventures Ahead 🎒✨</h3>
+          <p class="bucket-list-subtitle">Click to pledge our future travel and cute dates together:</p>
+          <div class="bucket-list-grid" id="bucketListGrid">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <button class="action-btn" onclick="App.goToChapter(4)">
+        Enter The Flower Garden 🌸
+      </button>
+    </section>
+
+    <!-- =========================================================================
+         CHAPTER 4: THE ENCHANTED FLOWER GARDEN (FLOWER THEME SECTION)
+         ========================================================================= -->
+    <section id="chapter-4" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter III</span>
+        <h1 class="chapter-title">The Eternal Flower Garden</h1>
+        <p class="chapter-subtitle">Like flowers in spring, you brought colors to my entire life 💐</p>
+      </div>
+
+      <div id="flowerGardenGrid" class="flower-garden-grid">
+        <!-- Injected dynamically from LOVE_CONFIG.flowerGarden -->
+      </div>
+
+      <div class="bouquet-bar">
+        <div class="bouquet-status" id="bouquetStatusText">
+          💐 Collected: <strong>0 / 5</strong> flowers
+        </div>
+        <button id="giftBouquetBtn" class="bouquet-gift-btn">
+          Gift This Bouquet To <span class="partner-nickname"></span> 🎁
+        </button>
+      </div>
+
+      <button class="action-btn" onclick="App.goToChapter(5)">
+        Listen To Our Melody 🎵
+      </button>
+    </section>
+
+    <!-- Flower Detail Modal -->
+    <div id="flowerDetailModal" class="flower-detail-modal">
+      <div class="flower-detail-card">
+        <div id="flowerDetailIcon" class="flower-detail-icon">🌹</div>
+        <h3 id="flowerDetailTitle" class="flower-detail-title">Red Velvet Rose</h3>
+        <div id="flowerDetailMeaning" class="flower-detail-meaning">Symbolizes: Eternal Passion</div>
+        <div id="flowerDetailQuote" class="flower-detail-quote"></div>
+        <button class="modal-close-btn" onclick="App.closeFlowerDetail()">Keep in My Heart 🤍</button>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         CHAPTER 5: RETRO VINYL RECORD PLAYER
+         ========================================================================= -->
+    <section id="chapter-5" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter IV</span>
+        <h1 class="chapter-title">Our Love Frequency</h1>
+        <p class="chapter-subtitle">Some songs sound just like the way I feel about you 🎶</p>
+      </div>
+
+      <div class="turntable-wrapper">
+        <div id="vinylDisc" class="vinyl-disc spinning">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-center-label">
+            <span>OUR LOVE</span>
+            <div class="vinyl-center-hole"></div>
+            <span>MIXTAPE</span>
+          </div>
+        </div>
+        <div id="turntableArm" class="turntable-arm playing"></div>
+      </div>
+
+      <div class="track-details-box">
+        <h3 id="vinylTrackTitle" style="color:#fff; font-family:var(--font-title); margin-bottom:6px;">Nee Kobapattal 🎵</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">Dedicated to <span class="partner-nickname"></span></p>
+        <button id="vinylPlayBtn" class="action-btn" style="margin-top:0;">
+          ⏸️ Pause Our Song
+        </button>
+      </div>
+
+      <button class="action-btn" onclick="App.goToChapter(6)">
+        Open The Love Jar 🍯
+      </button>
+    </section>
+
+    <!-- =========================================================================
+         CHAPTER 6: 3D ORIGAMI LOVE JAR
+         ========================================================================= -->
+    <section id="chapter-6" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter V</span>
+        <h1 class="chapter-title">The Jar of Endless Love</h1>
+        <p class="chapter-subtitle">A collection of sweet reasons why I fell for you 💌</p>
+      </div>
+
+      <div class="jar-container" id="loveJar">
+        <div class="love-jar-graphic">
+          <div class="jar-lid"></div>
+          <div class="jar-hearts-pile">
+            💖 🤍 💖<br>
+            🤍 💖 🤍 💖<br>
+            💖 🤍 💖 🤍 💖
+          </div>
+        </div>
+        <div class="jar-instruction">👆 Tap to unfold a folded love note</div>
+        <div id="jarCounter" class="jar-counter-badge">Opened: 0 / 20</div>
+      </div>
+
+      <button class="action-btn" onclick="App.goToChapter(7)">
+        Watch Our Memories Move 🎞️
+      </button>
+    </section>
+
+    <!-- Reason Parchment Modal -->
+    <div id="reasonModal" class="reason-modal">
+      <div class="reason-parchment">
+        <div id="reasonModalText"></div>
+        <button class="modal-close-btn" onclick="App.closeReasonModal()">Keep in My Heart 🤍</button>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         CHAPTER 7: DYNAMIC MOVING PHOTOS INFINITE FILMSTRIP REEL
+         ========================================================================= -->
+    <section id="chapter-7" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter VI</span>
+        <h1 class="chapter-title">Moving Memories</h1>
+        <p class="chapter-subtitle">Every snapshot of us dances forever in my heart 🎞️✨</p>
+      </div>
+
+      <div class="marquee-wrapper">
+        <!-- Top Row Moving Left -->
+        <div class="marquee-row">
+          <div id="movingTrackLeft" class="marquee-track track-left">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Bottom Row Moving Right -->
+        <div class="marquee-row">
+          <div id="movingTrackRight" class="marquee-track track-right">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <button class="action-btn" onclick="App.goToChapter(8)">
+        Play Telepathy Game ⚡
+      </button>
+    </section>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="image-lightbox" onclick="App.closeLightbox()">
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Memory">
+      </div>
+      <div id="lightboxText" class="lightbox-text"></div>
+    </div>
+
+    <!-- =========================================================================
+         CHAPTER 8: COUPLES TELEPATHY GAME
+         ========================================================================= -->
+    <section id="chapter-8" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter VII</span>
+        <h1 class="chapter-title">Couples Telepathy</h1>
+        <p class="chapter-subtitle">Let's see if our hearts think as one! 💘</p>
+      </div>
+
+      <div id="quizCard" class="quiz-card">
+        <!-- Rendered by App.renderQuizQuestion -->
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CHAPTER 9: ROMANTIC PICKUP LINES & 3D PROPOSAL STAGE
+         ========================================================================= -->
+    <section id="chapter-9" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter VIII</span>
+        <h1 class="chapter-title">Words From My Soul</h1>
+        <p class="chapter-subtitle">From cute pickup lines to my heart's deepest truth 💍✨</p>
+      </div>
+
+      <!-- Pickup Lines Card -->
+      <div class="pickup-deck">
+        <div id="pickupCounterText" class="pickup-counter">Pickup Line 1 of 5</div>
+        <div id="pickupLineText" class="pickup-line-quote">Are you a magician? 🪄</div>
+        <div id="pickupPunchlineText" class="pickup-punchline">Because whenever I look at you, everyone else disappears! ✨</div>
+        <div class="pickup-nav-btns">
+          <button class="pickup-nav-btn" onclick="App.prevPickupLine()">⬅️ Previous</button>
+          <button class="pickup-nav-btn" onclick="App.nextPickupLine()">Next Line ➡️</button>
+        </div>
+      </div>
+
+      <!-- 3D Ring Proposal Stage -->
+      <div class="proposal-stage-card">
+        <div class="proposal-lead-text">Every pickup line was just an excuse to say one real truth...</div>
+
+        <!-- 3D Velvet Ring Box -->
+        <div id="ringBoxWrapper" class="ring-box-wrapper" title="Click to open the ring box!">
+          <div class="velvet-box">
+            <div class="box-base"></div>
+            <div class="box-lid">💍</div>
+            <div class="glowing-diamond-ring">💎</div>
+          </div>
+        </div>
+
+        <h2 class="proposal-question">
+          Will you stay in my story forever and hold my hand until my last breath? 💍✨
+        </h2>
+
+        <div class="proposal-btn-container">
+          <button id="proposalYesBtn" class="btn-yes-proposal">
+            YES! A Million Times YES! 💍💖
+          </button>
+          <button id="proposalNoBtn" class="btn-no-runaway">
+            Let me think... (NO) 😜
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proposal Accepted Success Modal -->
+    <div id="proposalSuccessModal" class="proposal-success-modal">
+      <div class="proposal-success-card">
+        <div class="success-ring-icon">💍💖</div>
+        <h2 style="font-family:var(--font-royal); font-size:2rem; color:#fde68a; margin-bottom:12px;">SHE/HE SAID YES! 🎉</h2>
+        <p style="font-family:var(--font-romantic); font-size:1.8rem; color:#fff; line-height:1.4; margin-bottom:25px;">
+          Forever starts now. You are officially stuck with me for eternity and all lifetimes! 🫀✨
+        </p>
+        <button class="action-btn" onclick="App.closeProposalModal()">
+          Open My Secret Love Letter 💌
+        </button>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         CHAPTER 10: WAX SEAL LETTER & SKY LANTERNS FINALE
+         ========================================================================= -->
+    <section id="chapter-10" class="chapter-section">
+      <div class="chapter-header">
+        <span class="chapter-tag">Chapter IX</span>
+        <h1 class="chapter-title">The Eternal Vow</h1>
+        <p class="chapter-subtitle">A letter written from the deepest corner of my soul 🫀</p>
+      </div>
+
+      <div class="envelope-wrapper">
+        <div id="letterEnvelope" class="wax-envelope">
+          <div class="envelope-flap"></div>
+          <div id="waxSeal" class="wax-seal" title="Click to break the wax seal!">
+            ❤️
+          </div>
+        </div>
+
+        <div id="letterParchment" class="letter-parchment">
+          <div id="letterSalutation" class="letter-salutation"></div>
+          <div id="letterBodyText" class="letter-body"></div>
+          <div id="letterSignature" class="letter-signature"></div>
+        </div>
+      </div>
+
+      <div id="lanternPromptArea" class="lantern-prompt-area">
+        <p style="font-family:var(--font-romantic); font-size:1.6rem; color:var(--gold-glow); margin-bottom:15px;">
+          Release our sky lantern and seal our wish with the universe ✨🏮
+        </p>
+        <button id="launchLanternBtn" class="action-btn">
+          Release Our Sky Lantern 🏮✨
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       BOTTOM NAVIGATION DOCK (10 CHAPTER SHORTCUTS)
+       ========================================================================= -->
+  <nav id="navDock" class="nav-dock">
+    <button class="nav-item current" data-chapter="1" title="Vault Lock">🔒</button>
+    <button class="nav-item locked" data-chapter="2" title="Milestones">⭐</button>
+    <button class="nav-item locked" data-chapter="3" title="Our Journey">🧭</button>
+    <button class="nav-item locked" data-chapter="4" title="Flower Garden">🌸</button>
+    <button class="nav-item locked" data-chapter="5" title="Mixtape Vinyl">🎵</button>
+    <button class="nav-item locked" data-chapter="6" title="Love Jar">🍯</button>
+    <button class="nav-item locked" data-chapter="7" title="Moving Photos">🎞️</button>
+    <button class="nav-item locked" data-chapter="8" title="Telepathy Quiz">💘</button>
+    <button class="nav-item locked" data-chapter="9" title="Proposal">💍</button>
+    <button class="nav-item locked" data-chapter="10" title="Wax Letter">💌</button>
+  </nav>
+
+  <!-- Application Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/sound-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
